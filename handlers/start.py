@@ -18,7 +18,7 @@ message_to_delete = {}
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
     user_id = message.from_user.id
-    user_name = message.from_user.username
+    user_name = message.from_user.username or '-'
     name = message.from_user.first_name
 
     url_post = os.getenv('CREATE_USER')
